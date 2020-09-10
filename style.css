@@ -13,7 +13,7 @@ html, body {
   height: 100vh;
   background: linear-gradient(rgba(0, 0, 0, 0.733) 50%, rgba(0, 0, 0, 0.932) 100%), url("images/lauren-mancke-unsplash.jpg");
   background-repeat: no-repeat;
-  background-position: center;
+  /* background-position: center; */
   background-size: cover;
   background-attachment: fixed;
 }
