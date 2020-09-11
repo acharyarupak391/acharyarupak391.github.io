@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400&family=PT+Mono&family=Roboto:wght@300&family=Long+Cang&family=Dancing+Script:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400&family=PT+Mono&family=Roboto+Slab:wght@300;400;900&family=Long+Cang&family=Dancing+Script:wght@700&display=swap');
 
 html, body {
   margin: 0;
@@ -25,7 +25,7 @@ html, body {
   top: 92.5%;
   right: 2%;
   font-size: 0.9vw;
-  font-family: 'Roboto', sans-serif;
+  font-family: sans-serif;
   cursor: pointer;
 }
 
@@ -94,6 +94,54 @@ html, body {
   z-index: 0;
 }
 
+
+
+
+.div2 {
+  min-height: 500px;
+  background-color: rgb(200, 200, 200);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.div2 > span:nth-child(1) {
+  margin: 0px;
+  font-family: 'Roboto Slab';
+  font-size: 2.5em;
+  font-weight: 400;
+  border-radius: 4px;
+  /* color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text; */
+  background-color: rgb(46, 46, 46);
+  color: rgb(255, 255, 255);
+  padding: 10px;
+}
+
+.div2 > ul {
+  padding: 10px 50px;
+  background-color: rgb(46, 46, 46);
+  color: white;
+  list-style: none;
+  font-family: 'Roboto Slab';
+  font-weight: 300;
+  font-size: 1.2em;
+  line-height: 30px;
+  border-radius: 4px;
+  max-width: 60%;
+}
+
+.animation-class {
+  animation: tiles-animation 2s normal;
+}
+
+@keyframes tiles-animation {
+  50% {
+    box-shadow: 7px 7px 15px black;
+  }
+}
+
 @media only screen and (max-width: 800px) {
   .div1 .profile-img {
     width: 55vw;
@@ -107,27 +155,12 @@ html, body {
   .unsplash {
     font-size: 1.5vw;
   }
-}
 
+  .div2 > span {
+    text-align: center;
+  }
 
-
-
-
-
-
-
-.div2 {
-  min-height: 500px;
-  background-color: rgb(231, 231, 231);
-  padding: 20px;
-}
-
-.div2 > span:nth-child(1) {
-  margin: 0px;
-  font-family: 'Dancing Script';
-  font-size: 5em;
-  background: linear-gradient(to right, black 75%, rgb(231, 231, 231) 100%);
-  color: rgb(231, 231, 231);
-  padding: 10px;
-  border-radius: 4px;
+  .div2 > ul {
+    max-width: 100%;
+  }
 }
