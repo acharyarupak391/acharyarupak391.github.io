@@ -26,4 +26,12 @@ document.addEventListener('DOMContentLoaded', () => {
     window.open("https://unsplash.com/photos/aOC7TSLb1o8", "windowname")
   })
 
+  var allATags = document.querySelectorAll('.name>a')
+  allATags.forEach(aTag => {
+    aTag.addEventListener('click', e => {
+      e.preventDefault();
+      window.open(aTag.getAttribute("href"));
+    })
+  })
+
 })

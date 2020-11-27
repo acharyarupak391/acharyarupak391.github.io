@@ -52,6 +52,21 @@ html, body {
   padding-top: 15px;
 }  
 
+div.name>a {
+  font-size: 2vw;
+  margin: 0px;
+  padding: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+}
+
+a.fb:hover { color: #1178F2; }
+a.tw:hover { color: #2FCDFF; }
+a.ln:hover { color: #0A66C2; }
+a.ev:hover { color: #C61C19; }
+a.gh:hover { color: #14191E; }
+
 .name span {
   font-weight: 400;
   font-size: 3vw;
