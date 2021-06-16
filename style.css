@@ -53,7 +53,7 @@ html, body {
 }  
 
 div.name>a {
-  font-size: 2vw;
+  font-size: 20px;
   margin: 0px;
   padding: 5px;
   cursor: pointer;
@@ -71,7 +71,10 @@ a.gh:hover { color: #14191E; }
   font-weight: 400;
   font-size: 3vw;
   color: #fc454e;
-  font-family: 'Kumbh Sans';
+}
+
+.name p {
+  margin: 0;
 }
 
 .profile-img img {
@@ -108,9 +111,6 @@ a.gh:hover { color: #14191E; }
   backdrop-filter: blur(5px);
   z-index: 0;
 }
-
-
-
 
 .div2 {
   min-height: 500px;
@@ -177,5 +177,88 @@ a.gh:hover { color: #14191E; }
 
   .div2 > ul {
     max-width: 100%;
+  }
+}
+
+a.anim, span.anim {
+  display: inline-flex;
+}
+
+.anim {
+  opacity: 0;
+}
+
+span.anim {
+  opacity: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  align-items: center;
+  margin: 15px auto 5px auto;
+  border-right: 2px solid transparent;
+}
+
+@keyframes fadedown {
+  from {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes fadeup {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes faderight {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes spin {
+  from {
+    opacity: 0.5;
+    transform: rotate(0deg);
+    /* transform: rotate3d(1, 1, 1, 0deg); */
+  }
+  to {
+    opacity: 1;
+    transform: rotate(360deg);
+    /* transform: rotate3d(1, 1, 1, 360deg); */
+  }
+}
+
+@keyframes type {
+  from {
+    opacity: 1;
+    width: 0ch;
+  }
+  to {
+    width: 16ch;
+  }
+}
+
+@keyframes blinkTextCursor {
+  from {
+    opacity: 1;
+    border-right-color: rgba(255,255,255,.75);
+  }
+  to {
+    border-right-color: transparent;
   }
 }
