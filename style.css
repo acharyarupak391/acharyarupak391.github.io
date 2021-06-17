@@ -222,22 +222,20 @@ span.anim {
 @keyframes faderight {
   from {
     opacity: 0;
-    transform: translateX(-100px);
+    transform: translateX(-100px) rotate(0deg);
   }
   to {
     opacity: 1;
-    transform: translateX(0px);
+    transform: translateX(0px) rotate(360deg);
   }
 }
 
 @keyframes spin {
   from {
-    opacity: 0.5;
     transform: rotate(0deg);
     /* transform: rotate3d(1, 1, 1, 0deg); */
   }
   to {
-    opacity: 1;
     transform: rotate(360deg);
     /* transform: rotate3d(1, 1, 1, 360deg); */
   }
