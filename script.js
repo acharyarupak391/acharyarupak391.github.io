@@ -35,10 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
   var animatingElements = document.querySelectorAll(".anim");
   var element = document.querySelector(".div1");
 
-  animatingElements.forEach((e) => {
-    e.onanimationend = () => (e.style.opacity = 1);
-  });
-
   let options = {
     root: document.querySelector("#scrollArea"),
     rootMargin: "0px",
@@ -51,29 +47,22 @@ document.addEventListener("DOMContentLoaded", () => {
     entries.forEach((entry) => {
       console.log(entry.isIntersecting, entry.intersectionRatio);
       let isVisible = entry.isIntersecting;
+      if(!isVisible) return;
 
       animatingElements.forEach((animElement) => {
         let name = animElement.dataset.anim;
         if (name === "image") {
-          animElement.style.animation = isVisible
-            ? `fadedown 1s 0s 1 cubic-bezier(.72,-0.17,.06,.32)`
-            : "";
+          animElement.style.animation = `fadedown 1s 0s 1 forwards, scale 3.5s 1s 1 linear forwards`;
         } else if (name === "name") {
-          animElement.style.animation = isVisible
-            ? `fadeup 1s 0.5s 1 cubic-bezier(.72,-0.17,.06,.32)`
-            : "";
+          animElement.style.animation = `fadeup 1s 0.5s 1 cubic-bezier(.72,-0.17,.06,.32) forwards`;
         } else if (name === "handle") {
-          animElement.style.animation = isVisible
-            ? `type 3.5s steps(16) 1s 1 normal both, blinkTextCursor 500ms 14 normal`
-            : "";
+          animElement.style.animation = `type 3.5s steps(16) 1s 1 normal both, blinkTextCursor 500ms 14 normal forwards`;
         } else if (name === "social") {
-          animElement.style.animation = isVisible
-            ? `faderight 1s ${socialsDelay}s 1 cubic-bezier(.72,-0.17,.06,.32)`
-            : "";
+          animElement.style.animation = `faderight 1s ${socialsDelay}s 1 cubic-bezier(.72,-0.17,.06,.32) forwards`;
           socialsDelay += 0.25;
         }
       });
-      if (isVisible) animated = true;
+      animated = true;
     });
   }, options);
   observer.observe(element);
