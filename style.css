@@ -180,29 +180,6 @@ a.gh:hover { color: #14191E; }
   }
 }
 
-@media only screen and (max-width: 800px) {
-  .div1 .profile-img {
-    width: 55vw;
-  }
-
-  .div1 .name {
-    width: 75vw;
-    font-size: 8vw;
-  }
-
-  .unsplash {
-    font-size: 1.5vw;
-  }
-
-  .div2 > span {
-    text-align: center;
-  }
-
-  .div2 > ul {
-    max-width: 100%;
-  }
-}
-
 a.anim, span.anim {
   display: inline-flex;
 }
@@ -292,5 +269,30 @@ span.anim {
   to {
     opacity: 1;
     width: 500px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .div1 .profile-img {
+    width: 300px;
+    height: 400px;
+    background-size: contain;
+  }
+
+  .div1 .name {
+    width: 75vw;
+    font-size: 8vw;
+  }
+
+  .unsplash {
+    font-size: 1.5vw;
+  }
+
+  .div2 > span {
+    text-align: center;
+  }
+
+  .div2 > ul {
+    max-width: 100%;
   }
 }
