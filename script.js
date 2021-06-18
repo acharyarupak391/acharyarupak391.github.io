@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (animated) return;
     let socialsDelay = 1.5;
     entries.forEach((entry) => {
-      console.log(entry.isIntersecting, entry.intersectionRatio);
+      // console.log(entry.isIntersecting, entry.intersectionRatio);
       let isVisible = entry.isIntersecting;
       if(!isVisible) return;
 
