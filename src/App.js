@@ -2,59 +2,77 @@ import "./App.css";
 import { FaFacebook, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 import { HiPhotograph } from "react-icons/hi";
+import Tooltip from "./components/Tooltip.js";
 
 function App() {
+  const handleLinkClick = (e) => {
+    e.preventDefault();
+    window.open(e.currentTarget.href, "_blank");
+  };
+
   return (
     <div className="App">
-      <div class="div1">
-        <span class="backdrop"></span>
-        <div class="img-div-wrapper">
-          <div class="anim profile-img profile-animation">
+      <div className="div1">
+        <span className="backdrop"></span>
+        <div className="img-div-wrapper">
+          <div className="anim profile-img profile-animation">
             010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
             {/* <img src="images/profile-blue.png" alt="" /> */}
           </div>
         </div>
-        <div class="name">
-          <p class="anim name-animation">RUPAK ACHARYA</p>
-          <span class="anim handle-animation">@acharyarupak391</span>
+        <div className="name">
+          <p className="anim name-animation">RUPAK ACHARYA</p>
+          <span className="anim handle-animation">@acharyarupak391</span>
           <br />
-          <div class="socials-wrapper">
+          <div className="socials-wrapper">
             <a
-              class="anim fb socials-animation"
+              onClick={handleLinkClick}
+              className="anim fb socials-animation"
               href="https://www.facebook.com/acharyarupak391"
             >
               <FaFacebook />
             </a>
             <a
-              class="anim tw socials-animation"
+              onClick={handleLinkClick}
+              className="anim tw socials-animation"
               href="https://twitter.com/acharyarupak391"
             >
               <FaTwitter />
             </a>
             <a
-              class="anim ln socials-animation"
+              onClick={handleLinkClick}
+              className="anim ln socials-animation"
               href="https://www.linkedin.com/in/acharyarupak391/"
             >
               <FaLinkedin />
             </a>
+            <Tooltip title="Copy Email" copyText="acharyarupak391@gmail.com">
+              <a
+                className="anim ev socials-animation"
+                href="mailto:acharyarupak391@gmail.com"
+              >
+                <SiGmail />
+              </a>
+            </Tooltip>
+
             <a
-              class="anim ev socials-animation"
-              href="mailto: acharyarupak391@gmail.com"
-            >
-              <SiGmail />
-            </a>
-            <a
-              class="anim gh socials-animation"
+              onClick={handleLinkClick}
+              className="anim gh socials-animation"
               href="https://github.com/acharyarupak391"
             >
               <FaGithub />
             </a>
           </div>
         </div>
-        <p class="unsplash">
-          <HiPhotograph /> by Kyle Sung
-        </p>
-        <i class="fas fa-angle-double-down"></i>
+        <a
+          href="https://unsplash.com/photos/oQuP_XBjOMY"
+          onClick={handleLinkClick}
+        >
+          <p className="unsplash">
+            <HiPhotograph /> by Kyle Sung
+          </p>
+        </a>
+        <i className="fas fa-angle-double-down"></i>
       </div>
     </div>
   );
