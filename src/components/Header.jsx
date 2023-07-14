@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Logo from "../assets/Logo.svg";
+import Logo from "/logo.svg";
 import Button from "./Button";
 import { RESUME_URL } from "../utils/constants";
 
@@ -15,9 +15,9 @@ function Header() {
   }
   return (
     <header className="relative w-full">
-      <nav className="  h-[100px] flex mx-[30px] lg:mx-[70px] pt-[20px] lg:pt-[26px] items-center justify-between text-[17px]">
-        <div>
-          <img src={Logo} alt="" />
+      <nav className="h-[100px] flex mx-[30px] lg:mx-[70px] pt-[20px] lg:pt-[26px] items-center justify-between text-[17px]">
+        <div className="h-full">
+          <img src={Logo} alt="Logo" className="h-full" />
         </div>
         {/* Links for desktop and tablet devices */}
         <div className="hidden lg:flex justify-center items-center gap-[55px]">
