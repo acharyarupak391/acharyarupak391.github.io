@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../index.css";
 import { experience } from "../data";
+
 function Experience() {
   const [expData, setexpData] = useState(experience[0]);
   const handleClick = (ev, id) => {
@@ -27,46 +28,18 @@ function Experience() {
             className=" border-b-blueAccent border-b md:border-b-0  overflow-x-scroll md:overflow-visible
               md:border-l-blueAccent md:border-l flex md:block  "
           >
-            <li>
-              <button
-                onClick={(ev) => handleClick(ev, 1)}
-                className="transition-all ease-in-out md:mt-[28px] md:w-[200px] w-[250px] h-[40px] md:h-14
-                  rounded-r-sm p-9 md:p-3  flex items-center justify-center hover:text-greenAccent focus:bg-blueAccent
-                   focus:border-l-greenAccent focus:border-l-4  focus:bg-opacity-10 focus:text-greenAccent "
-              >
-                NEPTUNE MUTUAL
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={(ev) => handleClick(ev, 2)}
-                className=" transition-all ease-in-out md:mt-[28px] md:w-[200px] w-[250px] h-[40px] md:h-14
-                  rounded-r-sm p-9 md:p-3  flex items-center justify-center hover:text-greenAccent 
-                  focus:bg-blueAccent focus:border-l-greenAccent focus:border-l-4   focus:bg-opacity-10 "
-              >
-                INFINITY DIGITAL AGENCY (ISA)
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={(ev) => handleClick(ev, 3)}
-                className=" transition-all ease-in-out md:mt-[28px] md:w-[200px] w-[250px] h-[40px] md:h-14
-                  rounded-r-sm p-9 md:p-3  flex items-center justify-center hover:text-greenAccent 
-                  focus:bg-blueAccent focus:border-l-greenAccent focus:border-l-4   focus:bg-opacity-10 "
-              >
-                KARYATHALO
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={(ev) => handleClick(ev, 4)}
-                className=" transition-all ease-in-out md:mt-[28px] md:w-[200px] w-[250px] h-[40px] md:h-14
-                  rounded-r-sm p-9 md:p-3  flex items-center justify-center hover:text-greenAccent 
-                  focus:bg-blueAccent focus:border-l-greenAccent focus:border-l-4   focus:bg-opacity-10 "
-              >
-                BERRYBYTES
-              </button>
-            </li>
+            {experience.map(({ companyName, id }) => (
+              <li key={id}>
+                <button
+                  onClick={(ev) => handleClick(ev, id)}
+                  className="transition-all ease-in-out md:mt-[28px] md:w-[200px] w-[250px] h-[40px] md:h-14
+                      rounded-r-sm p-9 md:p-3  flex items-center justify-center hover:text-greenAccent focus:bg-blueAccent
+                       focus:border-l-greenAccent focus:border-l-4  focus:bg-opacity-10 focus:text-greenAccent "
+                >
+                  {companyName}
+                </button>
+              </li>
+            ))}
           </ul>
         </div>
         <div className="mt-10 ">
@@ -80,7 +53,6 @@ function Experience() {
           <ul className="list-disc list-outside mt-[30px]">
             {expData.description.map((data, index) => (
               <li key={index} className="mt-[10px]">
-                {/* {console.log(expData.description)} */}
                 {data}
               </li>
             ))}
