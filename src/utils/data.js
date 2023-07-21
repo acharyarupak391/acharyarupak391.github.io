@@ -12,6 +12,10 @@ import ReduxLogo from "../assets/skills/redux-logo.png";
 import TailwindCSSLogo from "../assets/skills/TailwindCSS.png";
 import SolidityLogo from "../assets/skills/solidity.png";
 
+import Github from "../assets/socials/github.svg";
+import Linkedin from "../assets/socials/linkedin.svg";
+import Twitter from "../assets/socials/twitter.svg";
+
 const experience = [
   {
     id: 1,
@@ -157,4 +161,45 @@ const skills = [
   },
 ];
 
-export { experience, education, trainings, skills };
+const socials = [
+  {
+    name: "Github",
+    link: "https://github.com/acharyarupak391",
+    iconSrc: Github,
+  },
+  {
+    name: "Linkedin",
+    link: "https://www.linkedin.com/in/acharyarupak391/",
+    iconSrc: Linkedin,
+  },
+  {
+    name: "Twitter",
+    link: "https://twitter.com/acharyarupak391",
+    iconSrc: Twitter,
+  },
+];
+
+const navLinks = [
+  {
+    link: "#aboutme",
+    text: "01. About",
+  },
+  {
+    link: "#experience",
+    text: "02. Experience",
+  },
+  {
+    link: "#skills",
+    text: "03. Skills",
+  },
+  {
+    link: "#education",
+    text: "04. Education",
+  },
+  {
+    link: "#contact",
+    text: "05. Contact",
+  },
+];
+
+export { experience, education, trainings, skills, socials, navLinks };

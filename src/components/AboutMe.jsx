@@ -40,13 +40,14 @@ function AboutMe() {
             bring innovation to life in the most enchanting ways imaginable.
           </p>
         </div>
-        <div className="relative  mt-10 lg:mt-0 lg:ml-0 md:ml-[20%] ml-[10%]  lg:translate-x-0">
+        <div className="relative mt-10 lg:mt-0 lg:ml-0 md:ml-[20%] ml-[10%] lg:translate-x-0">
           <img
             src={ProfilePic}
             alt="Profile Pic"
-            className="w-[240px] h-[250px] md:w-[300px] md:h-[300px] rounded-[3px]"
+            className="w-[240px] h-auto md:w-[300px] rounded-[3px]"
           />
-          <div className="w-[240px] h-[250px] md:w-[300px] md:h-[300px]  border-2 rounded-[3px] border-greenAccent absolute top-2  left-2 border-t-0 border-l-0 "></div>
+          {/* <div className="w-[240px] h-[250px] md:w-[300px] md:h-[300px]  border-2 rounded-[3px] border-greenAccent absolute top-2  left-2 border-t-0 border-l-0 "></div> */}
+          <div className="w-full h-full border-2 rounded-[3px] border-greenAccent absolute top-2  left-2 border-t-0 border-l-0 "></div>
         </div>
       </div>
     </section>

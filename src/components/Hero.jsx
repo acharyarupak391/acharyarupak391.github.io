@@ -1,43 +1,26 @@
 import React from "react";
-import Github from "../assets/socials/github.svg";
-import Instagram from "../assets/socials/instagram.svg";
-import Linkedin from "../assets/socials/linkedin.svg";
-import Twitter from "../assets/socials/twitter.svg";
 import Button from "./Button";
 import { RESUME_URL } from "../utils/constants";
+import { socials } from "../utils/data";
 function Hero() {
   return (
     <section className="flex mx-[30px] lg:mx-[70px]">
       <div className="fixed bottom-0 hidden lg:flex">
-        <ul className="flex-row items-center justify-center">
-          <li className="pt-[10px] w-[24px]">
-            <a target="_blank" href="https://github.com/acharyarupak391">
-              <img src={Github} alt="Github" />
-            </a>
-          </li>
-          <li className="pt-[30px] w-[24px]">
-            <a target="_blank" href="https://www.instagram.com/acharyarupak391">
-              <img src={Instagram} alt="Instagram" />
-            </a>
-          </li>
-          <li className="pt-[30px] w-[24px]">
-            <a
-              target="_blank"
-              href="https://www.linkedin.com/in/acharyarupak391/"
-            >
-              <img src={Linkedin} alt="Linkedin" />
-            </a>
-          </li>
-          <li className="pt-[30px] w-[24px]">
-            <a target="_blank" href="https://twitter.com/acharyarupak391">
-              <img src={Twitter} alt="Twitter" />
-            </a>
-          </li>
-          <li className="pt-[30px] w-[24px]">
+        <ul className="flex-col items-center justify-center flex gap-[30px]">
+          {socials.map(({ name, link, iconSrc }, idx) => (
+            <li className="w-[24px]" key={idx}>
+              <a target="_blank" href={link}>
+                <img src={iconSrc} alt={`${name} logo`} />
+              </a>
+            </li>
+          ))}
+
+          <li className="w-[24px]">
             <div className="border-2 rounded-sm border-blueAccent w-[2px] h-[130px] mx-auto "></div>
           </li>
         </ul>
       </div>
+
       <div className="md:mx-[30px] lg:mx-[115px] mt-[66px] w-[830px]">
         <p className="text-greenAccent">Hi, my name is</p>
         <h1 className=" text-[36px] md:text-[56px] lg:text-[88px] leading-[100%] font-bold text-bluePrimary">
@@ -53,6 +36,7 @@ function Hero() {
           Professional{" "}
           <span className="text-greenAccent">Full Stack Developer</span>.
         </p>
+
         <Button
           title={"Checkout my Resume!"}
           classes={

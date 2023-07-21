@@ -45,12 +45,12 @@ function Experience() {
           </ul>
         </div>
         <div className="mt-10 ">
-          <h3 className="pt-5 text-xl font-semibold font-inter text-bluePrimary ">
+          <h2 className="pt-5 text-xl font-semibold font-inter text-bluePrimary ">
             {expData.role}{" "}
             <span className="text-greenAccent hover:underline-offset-4 hover:underline ">
               @{expData.companyName}
             </span>
-          </h3>
+          </h2>
           <p className="mt-[10px]">{expData.timespan}</p>
           <ul className="list-disc list-outside mt-[30px]">
             {expData.description.map((data, index) => (

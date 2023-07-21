@@ -5,23 +5,27 @@ import Education from "./components/Education";
 import Experience from "./components/Experience";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
+import { SEO } from "./components/SEO";
 import Skills from "./components/Skills";
 import Trainings from "./components/Trainings";
 
 function App() {
   return (
-    <div className="bg-bgPrimary  text-blueAccent font-firacode  ">
-      <section className="max-w-[1440px] mx-auto">
-        <Header />
-        <Hero />
-        <AboutMe />
-        <Experience />
-        <Skills />
-        <Education />
-        <Trainings />
-        <Contact />
-      </section>
-    </div>
+    <>
+      <SEO />
+      <div className="bg-bgPrimary text-blueAccent font-firacode ">
+        <section className="max-w-[1440px] mx-auto">
+          <Header />
+          <Hero />
+          <AboutMe />
+          <Experience />
+          <Skills />
+          <Education />
+          <Trainings />
+          <Contact />
+        </section>
+      </div>
+    </>
   );
 }
 
