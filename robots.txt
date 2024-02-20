@@ -1,4 +1,2 @@
-// disable crawling for specific path
-
 User-agent: *
 Disallow: /assets/resume.pdf
