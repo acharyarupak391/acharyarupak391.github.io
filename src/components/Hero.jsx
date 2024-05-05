@@ -42,6 +42,7 @@ function Hero() {
           classes={
             " border text-greenAccent mx-auto md:mx-0 font-semibold border-greenAccent w-[260px] text-[14px] px-[34px] py-[29px] "
           }
+          target="_blank"
           href={RESUME_URL}
         />
       </div>
