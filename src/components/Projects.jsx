@@ -57,14 +57,14 @@ const Projects = () => {
         renderer={(project, i) => <ProjectCard project={project} />}
         lastSlide={
           <div className="w-full relative md:max-w-[75%] mx-auto h-full bg-black overflow-hidden transition-all rounded-lg group [background-size:100%] hover:[background-size:200%] bg-[url(/assets/projects/github-profile.png)]">
-            <div className="absolute inset-0 flex flex-col justify-center w-full h-full gap-2 p-8 bg-black bg-opacity-40 backdrop-blur-[8px]">
-              <p className="text-lg font-light text-gray-300">
+            <div className="absolute inset-0 flex flex-col justify-center w-full h-full gap-2 p-4 md:p-8 bg-black bg-opacity-40 backdrop-blur-[8px]">
+              <p className="font-light text-gray-300 sm:text-lg">
                 Want to see more of my works?
               </p>
               <a
                 href="https://github.com/acharyarupak391"
                 target="_blank"
-                className="flex items-center gap-3 font-mono text-xl font-semibold text-gray-100 border-b-2 border-transparent group-hover:border-gray-400 w-max"
+                className="flex items-center gap-3 font-mono text-base font-semibold text-gray-100 border-b-2 border-transparent sm:text-xl group-hover:border-gray-400 w-max"
               >
                 Checkout my Github Profile{" "}
                 <img

@@ -35,7 +35,7 @@ function Header() {
   }, []);
 
   return (
-    <header className="relative w-full">
+    <header className="sticky top-0 z-50 w-full bg-bgPrimary">
       <nav className="h-[100px] flex mx-[30px] lg:mx-[70px] pt-[20px] lg:pt-[26px] items-center justify-between text-[17px]">
         <div className="h-full">
           <img src={Logo} alt="Logo" className="h-full" />
@@ -77,7 +77,10 @@ function Header() {
           >
             {navLinks.map(({ link, text }, idx) => (
               <li className="pt-10" key={idx}>
-                <a href={link} onClick={(e) => setTimeout(toggleMenu, 500)}>
+                <a
+                  href={link}
+                  onClick={(e) => setTimeout(() => setIsOpen(false), 100)}
+                >
                   {text}
                 </a>
               </li>
