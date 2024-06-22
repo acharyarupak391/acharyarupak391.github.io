@@ -14,6 +14,11 @@ module.exports = {
         firacode: ["Fira Code", "r"],
         inter: ["Inter", "sans-serif"],
       },
+      backgroundImage: {
+        about: "url('/assets/profile.jpg')",
+        "project-gradient":
+          "linear-gradient(to top right, black 0%, transparent);",
+      },
     },
   },
   plugins: [],

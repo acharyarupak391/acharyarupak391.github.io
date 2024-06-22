@@ -1,31 +1,49 @@
 import React from "react";
 import Skillcard from "./Skillcard";
 import { skills } from "../utils/data";
+import Wrapper from "./Wrapper";
+
+import Slider from "./Slider";
+import Title from "./Title";
 
 function Skills() {
   return (
-    <section
-      id="skills"
-      className="mx-[30px] md:mx-[70px] lg:mx-[180px] mt-[66px] pt-10"
-    >
-      <div className="flex items-center justify-start gap-4">
-        <h1 className=" text-[24px] md:text-[32px] font-bold  text-bluePrimary">
-          03. Skills
-        </h1>
-        <div className="border-2  w-[130px] md:w-[230px] h-[1px] border-blueAccent "></div>
-      </div>
-      <div className="grid md:grid-cols-2 md:gap-[66px] md:mt-[66px] mt-[56px] gap-10 lg:grid-cols-3 lg:gap-[77px] mx-auto w-fit lg:mt-[84px]">
-        {skills.map(({ Logo, name, classes }, i) => (
+    <Wrapper id="skills">
+      <Title>03. Skills</Title>
+
+      <Slider
+        list={skills}
+        renderer={(skill) => (
           <Skillcard
-            src={Logo}
-            alt={`Logo for ${name}`}
-            key={i}
-            classes={classes}
-            title={name}
+            src={skill.Logo}
+            alt={`Logo for ${skill.name}`}
+            classes={skill.classes}
+            title={skill.name}
           />
-        ))}
-      </div>
-    </section>
+        )}
+        className="mt-10 lg:mt-24"
+        options={{
+          pagination: false,
+          arrows: false,
+          autoplay: true,
+          interval: 1500,
+          speed: 2000,
+          perPage: 5,
+          breakpoints: {
+            1130: {
+              perPage: 4,
+            },
+            1024: {
+              perPage: 3,
+            },
+            640: {
+              perPage: 1,
+              pagination: true,
+            },
+          },
+        }}
+      />
+    </Wrapper>
   );
 }
 

@@ -1,21 +1,14 @@
 import React from "react";
 import { education } from "../utils/data";
 import { classNames } from "../utils/classnames";
+import Wrapper from "./Wrapper";
+import Title from "./Title";
 
 function Education() {
   return (
-    <section
-      id="education"
-      className="mx-[30px] md:mx-[70px] lg:mx-[290px] mt-[60px] pt-10 lg:mt-[160px]"
-    >
-      <div className="flex items-center gap-4">
-        {" "}
-        <h1 className="text-[24px] md:text-[32px] font-bold  text-bluePrimary">
-          04. Education
-        </h1>
-        <div className="border-2  w-[130px] md:w-[230px] h-[1px] border-blueAccent "></div>
-      </div>{" "}
-      <div className="lg:mt-[92px] md:mt-[66px] mt-10 mx-auto space-y-14">
+    <Wrapper id="education">
+      <Title>05. Education</Title>
+      <div className="mx-auto mt-10 lg:mt-24 space-y-14">
         {education.map(({ title, institutionName, text, date }, idx) => (
           <div
             className={classNames(
@@ -37,7 +30,7 @@ function Education() {
           </div>
         ))}
       </div>
-    </section>
+    </Wrapper>
   );
 }
 

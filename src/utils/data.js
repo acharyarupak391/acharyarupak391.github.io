@@ -1,20 +1,29 @@
-const PythonLogo = "/assets/skills/python-logo.png";
-const FLaskLogo = "/assets/skills/flask-log.png";
+const PythonLogo = "/assets/skills/python.png";
+const FLaskLogo = "/assets/skills/flask.png";
 const GitLogo = "/assets/skills/git.png";
 const AwsLogo = "/assets/skills/aws.png";
-const TenserflowLogo = "/assets/skills/tensorflow.png";
 const MongodbLogo = "/assets/skills/mongodb.png";
-const NextLogo = "/assets/skills/next-logo.png";
-const NodeJSLogo = "/assets/skills/nodejs-logo.png";
-const PostgresSQLLogo = "/assets/skills/PostgresSQL.svg";
-const ReactJSLogo = "/assets/skills/reactjs-log.png";
-const ReduxLogo = "/assets/skills/redux-logo.png";
-const TailwindCSSLogo = "/assets/skills/TailwindCSS.png";
+const NextLogo = "/assets/skills/nextjs.png";
+const NodeJSLogo = "/assets/skills/nodejs.png";
+const PostgresSQLLogo = "/assets/skills/postgres.png";
+const ReactJSLogo = "/assets/skills/reactjs.png";
+const TailwindCSSLogo = "/assets/skills/tailwind.png";
 const SolidityLogo = "/assets/skills/solidity.png";
+const HardhatLogo = "/assets/skills/hardhat.png";
+const AstroLogo = "/assets/skills/astro.png";
+const HTMLLogo = "/assets/skills/html.png";
+const CSSLogo = "/assets/skills/css.png";
+const JavascriptLogo = "/assets/skills/javascript.png";
+const GolangLogo = "/assets/skills/go.png";
+const TypescriptLogo = "/assets/skills/typescript.png";
+const SqliteLogo = "/assets/skills/sqlite.png";
+const LinuxLogo = "/assets/skills/linux.png";
 
 const Github = "/assets/socials/github.svg";
 const Linkedin = "/assets/socials/linkedin.svg";
 const Twitter = "/assets/socials/twitter.svg";
+
+const Wordshell = "/assets/projects/wordshell.png";
 
 const experience = [
   {
@@ -103,21 +112,60 @@ const trainings = [
 
 const skills = [
   {
-    Logo: PythonLogo,
-    name: "Python",
+    Logo: TypescriptLogo,
+    name: "Typescript",
+  },
+  {
+    Logo: NextLogo,
+    name: "NextJS",
   },
   {
     Logo: NodeJSLogo,
     name: "NodeJS",
   },
   {
-    Logo: ReactJSLogo,
-    name: "ReactJS",
+    Logo: PythonLogo,
+    name: "Python",
   },
   {
     Logo: SolidityLogo,
     name: "Solidity",
-    classes: "w-[100px]",
+  },
+  {
+    Logo: LinuxLogo,
+    name: "Linux",
+  },
+  {
+    Logo: ReactJSLogo,
+    name: "ReactJS",
+  },
+  {
+    Logo: JavascriptLogo,
+    name: "Javascript",
+  },
+  {
+    Logo: AstroLogo,
+    name: "AstroJS",
+  },
+  {
+    Logo: MongodbLogo,
+    name: "Mongodb",
+  },
+  {
+    Logo: PostgresSQLLogo,
+    name: "PostgresSQL",
+  },
+  {
+    Logo: TailwindCSSLogo,
+    name: "TailwindCSS",
+  },
+  {
+    Logo: HTMLLogo,
+    name: "HTML",
+  },
+  {
+    Logo: CSSLogo,
+    name: "CSS",
   },
   {
     Logo: GitLogo,
@@ -126,38 +174,22 @@ const skills = [
   {
     Logo: AwsLogo,
     name: "Aws",
-    classes: "w-[100px]",
-  },
-  {
-    Logo: MongodbLogo,
-    name: "Mongodb",
   },
   {
     Logo: FLaskLogo,
     name: "FLask",
-    classes: "w-[100px]",
   },
   {
-    Logo: TenserflowLogo,
-    name: "Tenserflow",
+    Logo: SqliteLogo,
+    name: "Sqlite",
   },
   {
-    Logo: NextLogo,
-    name: "NextJS",
+    Logo: GolangLogo,
+    name: "Golang",
   },
   {
-    Logo: PostgresSQLLogo,
-    name: "PostgresSQL",
-    classes: "w-[150px]",
-  },
-  {
-    Logo: ReduxLogo,
-    name: "Redux",
-  },
-  {
-    Logo: TailwindCSSLogo,
-    name: "TailwindCSS",
-    classes: "w-[100px]",
+    Logo: HardhatLogo,
+    name: "Hardhat",
   },
 ];
 
@@ -202,4 +234,23 @@ const navLinks = [
   },
 ];
 
-export { experience, education, trainings, skills, socials, navLinks };
+const projects = [
+  {
+    name: "Wordshell",
+    image: Wordshell,
+    description:
+      "Its Wordle in your shell! Play wordle right from your terminal!",
+    github: "https://github.com/acharyarupak391/wordshell",
+    tech: "Bash",
+  },
+];
+
+export {
+  experience,
+  education,
+  trainings,
+  skills,
+  socials,
+  navLinks,
+  projects,
+};

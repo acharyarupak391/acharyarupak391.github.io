@@ -1,14 +1,12 @@
 import React from "react";
 import { socials } from "../utils/data";
+import Wrapper from "./Wrapper";
 
 const MailOutline = "/assets/MailOutline.svg";
 
 function Contact() {
   return (
-    <section
-      id="contact"
-      className="mx-[30px] md:mx-[70px] lg:mx-[290px] mt-[60px] pt-10 lg:mt-[150px] pb-[100px]"
-    >
+    <Wrapper id="contact" className="pb-[100px]">
       <div className="">
         <h1 className="lg:text-[24px] md:text-base text-center  font-semibold  text-greenAccent">
           06 . what&apos;s next?
@@ -44,7 +42,7 @@ function Contact() {
           <img className="md:w-[32px]" src={MailOutline} alt="" />
         </a>
       </div>
-    </section>
+    </Wrapper>
   );
 }
 

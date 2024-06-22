@@ -8,6 +8,7 @@ import Education from "@/components/Education";
 import Trainings from "@/components/Trainings";
 import Contact from "@/components/Contact";
 import SEO from "@/components/SEO";
+import Projects from "@/components/Projects";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,13 +17,14 @@ export default function Home() {
     <div
       className={`bg-bgPrimary text-blueAccent font-firacode ${inter.className}`}
     >
-      <section className="max-w-[1440px] mx-auto">
+      <section className="max-w-screen-xl mx-auto">
         <SEO />
         <Header />
         <Hero />
         <AboutMe />
         <Experience />
         <Skills />
+        <Projects />
         <Education />
         <Trainings />
         <Contact />
