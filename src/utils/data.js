@@ -235,6 +235,10 @@ const navLinks = [
     text: "Skills",
   },
   {
+    link: "#projects",
+    text: "Projects",
+  },
+  {
     link: "#education",
     text: "Education",
   },
