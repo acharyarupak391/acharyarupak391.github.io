@@ -18,12 +18,18 @@ const GolangLogo = "/assets/skills/go.png";
 const TypescriptLogo = "/assets/skills/typescript.png";
 const SqliteLogo = "/assets/skills/sqlite.png";
 const LinuxLogo = "/assets/skills/linux.png";
+const PrismaLogo = "/assets/skills/prisma.png";
 
 const Github = "/assets/socials/github.svg";
 const Linkedin = "/assets/socials/linkedin.svg";
 const Twitter = "/assets/socials/twitter.svg";
 
-const Wordshell = "/assets/projects/wordshell.png";
+const WordshellImage = "/assets/projects/wordshell.png";
+const NodeStreamImage = "/assets/projects/node-torrent-stream.png";
+const EncoderImage = "/assets/projects/encoder.png";
+const RealtimeNegotiationImage = "/assets/projects/realtime.png";
+const EventSchedulerImage = "/assets/projects/event-scheduler.png";
+const AmazonScraperImage = "/assets/projects/scraper.png";
 
 const experience = [
   {
@@ -156,6 +162,10 @@ const skills = [
     name: "PostgresSQL",
   },
   {
+    Logo: PrismaLogo,
+    name: "Prisma",
+  },
+  {
     Logo: TailwindCSSLogo,
     name: "TailwindCSS",
   },
@@ -236,12 +246,54 @@ const navLinks = [
 
 const projects = [
   {
+    name: "Simple Event Scheduler",
+    image: EventSchedulerImage,
+    description:
+      "A simple event scheduler that lets you schedule events, see holidays based on your country and get notified on your event.",
+    github: "https://github.com/acharyarupak391/simple-event-scheduler",
+    link: "https://simple-event-scheduler.vercel.app",
+    tech: "Typescript, NodeJS, Sqlite, ExpressJS, ReactJS, Tailwind",
+  },
+  {
     name: "Wordshell",
-    image: Wordshell,
+    image: WordshellImage,
     description:
       "Its Wordle in your shell! Play wordle right from your terminal!",
     github: "https://github.com/acharyarupak391/wordshell",
     tech: "Bash",
+  },
+  {
+    name: "Node Torrent Stream",
+    image: NodeStreamImage,
+    description:
+      "Stream torrent videos in directly in your browser with your own server!",
+    github: "https://github.com/acharyarupak391/Node-Torrent-Stream",
+    tech: "NodeJS, ExpressJS, webtorrent, ReactJS, MaterialUI",
+  },
+  {
+    name: "Stream to Image Encoder w/ Python",
+    image: EncoderImage,
+    description:
+      "A python based cli tool to encode a text file into an image to secure the content with reduced size.",
+    github: "https://github.com/acharyarupak391/string-to-image-encoder",
+    tech: "Python",
+  },
+  {
+    name: "Realtime Payment Negotiation",
+    image: RealtimeNegotiationImage,
+    description:
+      "Realtime payment negotiation between two parties in realtime creating a secure connection pool.",
+    github:
+      "https://github.com/acharyarupak391/realtime-negotiation-with-websocket",
+    tech: "NextJS, Express, Websocket, Typescript, NodeJS, SQLite",
+  },
+  {
+    name: "Amazon Product Scraper",
+    image: AmazonScraperImage,
+    description:
+      "A browser extension to scrape product details such as name, price, images, overview & description from any amazon.in product page, save in the database and view all the saved products.",
+    github: "https://github.com/acharyarupak391/amazon-scraper",
+    tech: "NodeJS, Express, Prisma, Postgresql, Extension, Typescript, React, Webpack",
   },
 ];
 
