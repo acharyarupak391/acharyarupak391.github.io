@@ -18,14 +18,14 @@ function Experience() {
         <div className="md:mr-10">
           <ul
             id="scrollbar"
-            className="flex overflow-x-scroll border-b border-b-blueAccent md:border-b-0 md:overflow-visible md:border-l-blueAccent md:border-l md:block space-y-[28px]"
+            className="flex overflow-x-scroll border-b border-b-blueAccent md:border-b-0 md:overflow-visible md:border-l-blueAccent md:border-l items-center md:block md:space-y-[28px]"
           >
             {experience.map(({ companyName, id }) => (
-              <li key={id}>
+              <li key={id} className="h-max">
                 <button
                   onClick={(ev) => handleClick(ev, id)}
                   className={classNames(
-                    "transition-all ease-in-out md:w-[200px] w-[250px] h-[40px] md:h-14 rounded-r-sm p-9 md:p-3  flex items-center justify-center hover:text-greenAccent",
+                    "transition-all ease-in-out md:w-[200px] w-[250px] h-[40px] md:h-14 rounded-r-sm p-9 md:p-3 flex items-center justify-center hover:text-greenAccent",
                     expData.id === id &&
                       "bg-blueAccent border-l-greenAccent border-l-4  bg-opacity-10 text-greenAccent"
                   )}
@@ -44,7 +44,7 @@ function Experience() {
             </span>
           </h2>
           <p className="mt-[10px]">{expData.timespan}</p>
-          <ul className="list-disc list-outside mt-[30px]">
+          <ul className="list-disc pl-4 list-outside mt-[30px]">
             {expData.description.map((data, index) => (
               <li key={index} className="mt-[10px]">
                 {data}

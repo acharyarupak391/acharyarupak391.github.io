@@ -36,10 +36,10 @@ function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-bgPrimary">
-      <nav className="h-[100px] flex mx-[30px] lg:mx-[70px] pt-[20px] lg:pt-[26px] items-center justify-between text-[17px]">
-        <div className="h-full">
-          <img src={Logo} alt="Logo" className="h-full" />
-        </div>
+      <nav className="h-[100px] flex mx-[16px] lg:mx-[70px] py-[16px] lg:py-[20px] items-center justify-between text-[17px]">
+        <a className="flex items-center h-full" href="#">
+          <img src={Logo} alt="Logo" className="h-12 md:h-full" />
+        </a>
         {/* Links for desktop and tablet devices */}
         <div className="hidden lg:flex justify-center items-center gap-[55px]">
           <ul className="flex gap-[42px] text-sm text-bluePrimary font-semibold">

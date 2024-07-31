@@ -24,6 +24,7 @@ const Github = "/assets/socials/github.svg";
 const Linkedin = "/assets/socials/linkedin.svg";
 const Twitter = "/assets/socials/twitter.svg";
 
+const DelightsOfIndiaImage = "/assets/projects/delightsofindia.png";
 const WordshellImage = "/assets/projects/wordshell.png";
 const NodeStreamImage = "/assets/projects/node-torrent-stream.png";
 const EncoderImage = "/assets/projects/encoder.png";
@@ -249,6 +250,14 @@ const navLinks = [
 ];
 
 const projects = [
+  {
+    name: "Delights Of India",
+    image: DelightsOfIndiaImage,
+    description:
+      "Site for the Delights Of India restaurant to know about, see the menu and reserve a booking.",
+    link: "https://www.delightsofindia.art/",
+    tech: "Typescript, NextJS, Sanity CMS, Tailwind",
+  },
   {
     name: "Simple Event Scheduler",
     image: EventSchedulerImage,

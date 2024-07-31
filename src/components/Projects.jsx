@@ -9,22 +9,35 @@ const WWWIcon = "/assets/socials/www.svg";
 const ProjectCard = ({ project }) => {
   return (
     <div className="w-full md:max-w-[75%] mx-auto rounded-lg overflow-hidden h-full flex flex-col">
-      <div className="relative flex justify-center flex-grow bg-black">
-        <div className="absolute w-full h-full bg-project-gradient" />
+      <div className="relative flex justify-center flex-grow bg-black max-h-[500px]">
+        <div className="absolute z-20 w-full h-full bg-project-gradient" />
         <img
           src={project.image}
           alt={`Project ${project.name} image`}
-          className="object-contain object-center h-full max-h-[500px]"
+          className="z-10 object-contain object-center h-full"
+        />
+        <div
+          className="absolute z-0 w-full h-full bg-no-repeat bg-cover blur-md brightness-50"
+          style={{
+            backgroundImage: `url(${project.image})`,
+          }}
         />
 
-        <div className="absolute bottom-0 left-0 p-4 space-y-2 text-gray-200">
+        <div className="absolute bottom-0 left-0 z-30 p-4 space-y-2 text-gray-200">
           <p className="text-lg font-bold">{project.name}</p>
           <p className="text-sm text-gray-300">{project.tech}</p>
           <div className="flex items-center gap-4">
-            <a href={project.github} target="_blank" className="flex gap-2">
-              <img src={GithubIcon} alt="Github icon" width={16} height={16} />
-              <span className="text-sm text-gray-300">View on Github</span>
-            </a>
+            {project.github && (
+              <a href={project.github} target="_blank" className="flex gap-2">
+                <img
+                  src={GithubIcon}
+                  alt="Github icon"
+                  width={16}
+                  height={16}
+                />
+                <span className="text-sm text-gray-300">View on Github</span>
+              </a>
+            )}
             {project.link && (
               <a
                 href={project.link}

@@ -5,7 +5,7 @@ const Wrapper = ({ children, id, className = "" }) => {
     <section
       id={id}
       className={classNames(
-        "mx-[30px] md:mx-[70px] lg:mx-[180px] mt-[60px] pt-4 lg:mt-[160px]",
+        "mx-[16px] md:mx-[70px] lg:mx-[180px] mt-[60px] pt-4 lg:mt-[160px]",
         className
       )}
     >
