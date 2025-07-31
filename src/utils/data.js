@@ -34,6 +34,22 @@ const AmazonScraperImage = "/assets/projects/scraper.png";
 
 const experience = [
   {
+    id: 0,
+    role: "FRONTEND DEVELOPER",
+    companyName: "NIURAL",
+    description: [
+      "Actively working on development of a comprehensive payroll, HR, and finance platform with Web3 payment technology as its core functionality.",
+      "Designed and optimized server-side rendering (SSR) and static site generation (SSG) strategies for enterprise-level financial applications.",
+      "Integrated Web3 payment gateways and blockchain transaction modules enabling secure cryptocurrency payroll processing.",
+      "Engineered reusable React components for streamlined HR workflows and employee management systems.",
+      "Collaborated with blockchain teams to synchronize smart contract interactions with intuitive frontend interfaces.",
+      "Implemented performance monitoring and state management using React Query and Zustand.",
+      "Drove adoption of end-to-end testing with Cypress and component testing using Storybook.",
+    ],
+    timespan: "2024-10-01 to Present",
+    location: "Lalitpur, Nepal",
+  },
+  {
     id: 1,
     role: "FRONTEND ENGINEER",
     companyName: "NEPTUNE MUTUAL",
@@ -41,7 +57,7 @@ const experience = [
       "Currently, I am immersed in the fascinating world of web3 and blockchain technology, leveraging my expertise in React and other modern tech stacks.",
       "As a part of my current work experience at a prominent company, I am actively involved in developing decentralized applications, smart contracts, and exploring innovative solutions to revolutionize various industries using blockchain technology.",
     ],
-    timespan: "2022-01-01 to Present",
+    timespan: "2022-01-01 to 2024-09-20",
   },
   {
     id: 2,
