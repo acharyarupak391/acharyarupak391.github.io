@@ -85,14 +85,14 @@ export const profile = {
   roleShort: "Full-Stack Engineer",
   tagline: "Building resilient web platforms across React, Next.js, Node.js, and the blockchain.",
   introduction:
-    "Full-Stack Web Developer with 4+ years building React, Next.js, and Node.js platforms. Working across Web3, smart contracts, and machine learning to ship products that are fast, secure, and maintainable.",
+    "Full-Stack Web Developer with 6 years building React, Next.js, and Node.js platforms. Working across Web3, smart contracts, and machine learning to ship products that are fast, secure, and maintainable.",
   location: "Kathmandu, Nepal",
   coordinates: "27.7172° N, 85.3240° E",
   timezone: "Asia/Kathmandu (UTC+05:45)",
   email: "acharyarupak391@gmail.com",
   phone: "+977 9863630147",
   availability: "Open to senior full-stack & Web3 engineering roles",
-  yearsExperience: "4+",
+  yearsExperience: "6",
   portfolioUrl: "https://rupakacharya.com.np",
   githubUrl: "https://github.com/acharyarupak391",
   linkedinUrl: "https://linkedin.com/in/acharyarupak391",
@@ -148,7 +148,7 @@ export const contactLinks: ContactLink[] = [
 
 export const stats: StatItem[] = [
   {
-    value: "4+",
+    value: "6",
     label: "Years building",
     note: "production web platforms",
   },
@@ -158,14 +158,9 @@ export const stats: StatItem[] = [
     note: "2020 — present",
   },
   {
-    value: "03",
+    value: "MULTI",
     label: "Languages",
-    note: "JS · Python · Go",
-  },
-  {
-    value: "02",
-    label: "Active roles",
-    note: "Bivo · Minestarters",
+    note: "multiple languages",
   },
 ];
 

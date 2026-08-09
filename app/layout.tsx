@@ -29,7 +29,7 @@ const mono = JetBrains_Mono({
 const siteUrl = "https://rupakacharya.com.np";
 const siteTitle = "Rupak Acharya — Full-Stack & Web3 Engineer";
 const siteDescription =
-  "Senior full-stack web developer with 4+ years building React, Next.js, Node.js, and Web3 platforms. Currently senior frontend developer at Bivo, building creator-focused CRM, and frontend & Web3 developer at Minestarters.";
+  "Senior full-stack web developer with 6 years building React, Next.js, Node.js, and Web3 platforms. Currently senior frontend developer at Bivo, building creator-focused CRM, and frontend & Web3 developer at Minestarters.";
 const socialImage = `${siteUrl}/og.jpg`;
 const socialImageAlt = "Rupak Acharya — Full-Stack & Web3 Engineer";
 

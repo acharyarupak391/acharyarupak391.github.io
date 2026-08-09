@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import Image from "next/image";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, ExternalLink } from "lucide-react";
 import { profile, tickerItems, stats } from "@/data/portfolio";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
 import { gsap, useGSAP } from "@/lib/portfolio/gsap-client";
@@ -318,7 +318,7 @@ export function Hero() {
 
         {/* Stats grid — desktop only (lg+) */}
         <div
-          className="hidden lg:grid grid-cols-4 rule-t surface-soft"
+          className="hidden lg:grid grid-cols-3 rule-t surface-soft"
           data-parallax="0.15"
         >
           {stats.map((stat, i) => (
@@ -371,6 +371,19 @@ export function Hero() {
               <ArrowDown
                 size={14}
                 className="transition-transform group-hover:translate-y-0.5"
+              />
+            </a>
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-2.5 surface-canvas text-ink rule-2 px-5 py-3 font-mono text-xs uppercase tracking-[0.14em] hover:bg-ink hover:text-ink-inverse transition-colors magnetic whitespace-nowrap"
+            >
+              <span>View resume</span>
+              <ExternalLink
+                size={14}
+                className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                aria-hidden="true"
               />
             </a>
           </div>
