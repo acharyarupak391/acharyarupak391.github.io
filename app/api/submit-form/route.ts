@@ -1,9 +1,20 @@
 // app/api/submit-form/route.ts
 
-import { ContactFormData } from "@/components/contact";
 import { Client } from "@notionhq/client";
 import { NextResponse } from "next/server";
 
+type ContactFormData = {
+  name: string;
+  email: string;
+  relationship: string;
+  relationshipOther?: string;
+  purpose: string;
+  purposeOther?: string;
+  message: string;
+  socialTwitter?: string;
+  socialLinkedin?: string;
+  socialGithub?: string;
+};
 
 // Initialize Notion Client (API Key is secured via environment variables)
 const notion = new Client({ auth: process.env.NOTION_API_KEY });
@@ -17,7 +28,24 @@ export async function POST(request: Request) {
     );
   }
 
-  const body: ContactFormData = await request.json();
+  let body: ContactFormData;
+
+  try {
+    body = await request.json();
+  } catch {
+    return NextResponse.json(
+      { error: "Invalid JSON in form data." },
+      { status: 400 },
+    );
+  }
+
+  if (!body || typeof body !== "object") {
+    return NextResponse.json(
+      { error: "Form data must be a JSON object." },
+      { status: 400 },
+    );
+  }
+
   const { name, email, message, purpose, relationship, purposeOther, relationshipOther,
     socialGithub,
     socialLinkedin,
@@ -28,7 +56,7 @@ export async function POST(request: Request) {
   const finalRelationship = relationship === "other" ? relationshipOther || "Other" : relationship;
   const finalSocials = `${socialGithub ? `GitHub: ${socialGithub}\n` : ""}${socialLinkedin ? `LinkedIn: ${socialLinkedin}\n` : ""}${socialTwitter ? `Twitter: ${socialTwitter}\n` : ""}`;
 
-  if (!name || !email || !message || !purpose) {
+  if (!name?.trim() || !email?.trim() || !message?.trim() || !purpose || !relationship) {
     return NextResponse.json(
       { error: "Missing required fields in form data." },
       { status: 400 }
@@ -86,8 +114,8 @@ export async function POST(request: Request) {
     console.log("Successfully added entry to Notion:", response.id);
     return NextResponse.json({ success: true, pageId: response.id }, { status: 201 });
 
-  } catch (error: any) {
-    console.error("Notion API Error:", error.message);
+  } catch (error) {
+    console.error("Notion API Error:", error);
     return NextResponse.json(
       { success: false, error: "Failed to save data due to server error." },
       { status: 500 }
