@@ -1,8 +1,9 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter_Tight, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { GrainOverlay } from "@/components/portfolio/grain-overlay";
+import { profile } from "@/data/portfolio";
 
 const inter = Inter_Tight({
   variable: "--font-inter",
@@ -29,6 +30,17 @@ const siteUrl = "https://rupakacharya.com.np";
 const siteTitle = "Rupak Acharya — Full-Stack & Web3 Engineer";
 const siteDescription =
   "Senior full-stack web developer with 4+ years building React, Next.js, Node.js, and Web3 platforms. Currently senior frontend developer at Bivo, building creator-focused CRM, and frontend & Web3 developer at Minestarters.";
+const socialImage = `${siteUrl}/og.jpg`;
+const socialImageAlt = "Rupak Acharya — Full-Stack & Web3 Engineer";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f2f1ed" },
+    { media: "(prefers-color-scheme: dark)", color: "#0d0e10" },
+  ],
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -49,10 +61,16 @@ export const metadata: Metadata = {
     "Nepal",
     "Frontend Engineer",
   ],
-  authors: [{ name: "Rupak Acharya" }],
+  applicationName: "Rupak Acharya Portfolio",
+  category: "technology",
+  classification: "Personal portfolio and professional profile",
+  authors: [{ name: "Rupak Acharya", url: siteUrl }],
   creator: "Rupak Acharya",
   publisher: "Rupak Acharya",
-  alternates: { canonical: siteUrl },
+  alternates: {
+    canonical: siteUrl,
+    languages: { "en-US": siteUrl },
+  },
   openGraph: {
     title: siteTitle,
     description: siteDescription,
@@ -60,13 +78,23 @@ export const metadata: Metadata = {
     siteName: "Rupak Acharya — Portfolio",
     locale: "en_US",
     type: "profile",
-    images: ["/og.png"],
+    images: [
+      {
+        url: socialImage,
+        width: 1200,
+        height: 630,
+        alt: socialImageAlt,
+        type: "image/jpeg",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
+    site: "@acharyarupak391",
+    creator: "@acharyarupak391",
     title: siteTitle,
     description: siteDescription,
-    images: ["/og.png"],
+    images: [{ url: socialImage, alt: socialImageAlt }],
   },
   robots: {
     index: true,
@@ -79,44 +107,64 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/logo.svg", type: "image/svg+xml", sizes: "512x512" },
+    ],
+    shortcut: ["/favicon.svg"],
   },
 };
 
-const personJsonLd = {
+const structuredData = {
   "@context": "https://schema.org",
-  "@type": "Person",
-  name: "Rupak Acharya",
-  jobTitle: "Senior Full-Stack & Web3 Developer",
-  email: "mailto:acharyarupak391@gmail.com",
-  telephone: "+9779863630147",
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Kathmandu",
-    addressCountry: "Nepal",
-  },
-  description: siteDescription,
-  url: siteUrl,
-  knowsAbout: [
-    "React",
-    "Next.js",
-    "Node.js",
-    "TypeScript",
-    "Web3",
-    "Solidity",
-    "Smart Contracts",
-    "Machine Learning",
-    "Python",
-    "Golang",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      url: siteUrl,
+      name: siteTitle,
+      description: siteDescription,
+      publisher: { "@id": `${siteUrl}/#person` },
+      inLanguage: "en-US",
+    },
+    {
+      "@type": "Person",
+      "@id": `${siteUrl}/#person`,
+      name: profile.name,
+      url: siteUrl,
+      image: `${siteUrl}/profile.png`,
+      jobTitle: profile.role,
+      email: `mailto:${profile.email}`,
+      telephone: profile.phone,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Kathmandu",
+        addressCountry: "NP",
+      },
+      description: siteDescription,
+      sameAs: [profile.githubUrl, profile.linkedinUrl],
+      knowsAbout: [
+        "React",
+        "Next.js",
+        "Node.js",
+        "TypeScript",
+        "Web3",
+        "Solidity",
+        "Smart Contracts",
+        "Machine Learning",
+        "Python",
+        "Golang",
+      ],
+      worksFor: [
+        { "@type": "Organization", name: "Bivo" },
+        { "@type": "Organization", name: "Minestarters" },
+      ],
+      alumniOf: {
+        "@type": "CollegeOrUniversity",
+        name: "Malla Reddy College of Engineering & Technology",
+      },
+    },
   ],
-  worksFor: [
-    { "@type": "Organization", name: "Bivo" },
-    { "@type": "Organization", name: "Minestarters" },
-  ],
-  alumniOf: {
-    "@type": "CollegeOrUniversity",
-    name: "Malla Reddy College of Engineering & Technology",
-  },
 };
 
 export default function RootLayout({
@@ -127,7 +175,7 @@ export default function RootLayout({
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </head>
       <body
