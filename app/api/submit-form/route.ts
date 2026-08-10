@@ -2,6 +2,7 @@
 
 import { Client } from "@notionhq/client";
 import { NextResponse } from "next/server";
+import { sendEmail } from "@/lib/server/send-email";
 
 type ContactFormData = {
   name: string;
@@ -21,13 +22,6 @@ const notion = new Client({ auth: process.env.NOTION_API_KEY });
 const DATABASE_ID = process.env.NOTION_DATABASE_ID as string;
 
 export async function POST(request: Request) {
-  if (!DATABASE_ID) {
-    return NextResponse.json(
-      { error: "NOTION_DATABASE_ID is not set in environment variables." },
-      { status: 500 }
-    );
-  }
-
   let body: ContactFormData;
 
   try {
@@ -63,7 +57,14 @@ export async function POST(request: Request) {
     );
   }
 
+  let pageId: string | undefined;
+  let notionError: string | undefined;
+
   try {
+    if (!DATABASE_ID) {
+      throw new Error("NOTION_DATABASE_ID is not set in environment variables.");
+    }
+
     const response = await notion.pages.create({
       parent: { database_id: DATABASE_ID },
       properties: {
@@ -111,14 +112,34 @@ export async function POST(request: Request) {
       },
     });
 
-    console.log("Successfully added entry to Notion:", response.id);
-    return NextResponse.json({ success: true, pageId: response.id }, { status: 201 });
-
+    pageId = response.id;
+    console.log("Successfully added entry to Notion:", pageId);
   } catch (error) {
     console.error("Notion API Error:", error);
+    notionError = error instanceof Error ? error.message : "Unknown Notion error.";
+  }
+
+  try {
+    await sendEmail({
+      name,
+      email,
+      relationship: finalRelationship,
+      purpose: finalPurpose,
+      message,
+      socials: finalSocials,
+      notionPageId: pageId,
+      notionError,
+    });
+  } catch (error) {
+    console.error("Resend email error:", error);
+  }
+
+  if (notionError) {
     return NextResponse.json(
       { success: false, error: "Failed to save data due to server error." },
       { status: 500 }
     );
   }
+
+  return NextResponse.json({ success: true, pageId }, { status: 201 });
 }
